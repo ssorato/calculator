@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  
+  calcfront:
+    image: calcfront
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      API_URL: "http://calcapi/api"
+    depends_on:
+      - calcapi
+  
+  calcapi:
+    image: calcapi
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+

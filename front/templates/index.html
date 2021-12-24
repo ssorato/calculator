@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+
+	<body>
+    <div class="container mx-5 my-5"></div>
+      <form class="form-inline mx-5 my-5" action={{ url_for('result') }} method="post">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <input type="number" class="form-control mb-2" name="number1" value={{ number1 }}>
+          </div>
+          <div class="col-auto">
+            <select data-style="btn-primary" name="operation" class="form-control mb-2">
+              <option value={{ oper }} selected>{{ oper }}</option>
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+            </select>
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control mb-2"  name="number2" value={{ number2 }}>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">=</button>
+          </div>
+          <div class="col-auto">
+            <input type="text" name="result" class="form-control mb-2" value="{{ result }}" readonly>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
